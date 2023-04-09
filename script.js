@@ -23,13 +23,13 @@ btn.addEventListener('click', function () {
     status = 'Underweight';
   }
   if (BMI >= 18.5 && BMI < 24.9) {
-    status = 'Healthy';
+    status = 'Normal Weight';
   }
   if (BMI >= 25 && BMI < 29.9) {
     status = 'Overweight';
   }
   if (BMI >= 30) {
-    status = 'Obesitas';
+    status = 'Obesity';
   }
   document.querySelector('.comment').innerHTML = `Comment: You are <span id="comment">${status}</span>`;
 });
