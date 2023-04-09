@@ -8,4 +8,28 @@ btn.addEventListener('click', function () {
     alert('Please fill out the input fields!');
     return;
   }
+
+  height = height / 100;
+
+  let BMI = weight / (height * height);
+
+  BMI = BMI.toFixed(2);
+
+  document.querySelector('#result').innerHTML = BMI;
+
+  let status = '';
+
+  if (BMI < 18.5) {
+    status = 'Underweight';
+  }
+  if (BMI >= 18.5 && BMI < 24.9) {
+    status = 'Healthy';
+  }
+  if (BMI >= 25 && BMI < 29.9) {
+    status = 'Overweight';
+  }
+  if (BMI >= 30) {
+    status = 'Obesitas';
+  }
+  document.querySelector('.comment').innerHTML = `Comment: You are <span id="comment">${status}</span>`;
 });
